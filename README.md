@@ -45,7 +45,7 @@ The app implements a custom design system with:
   - Loading Indicators
 
 ## 🔌 API Integration
-This app uses the [Birds API](https://github.com/emresahin10/BirdsAPI) for fetching bird data. The API provides:
+This app uses the [Birds API](https://github.com/emresahin10/bird-watching-api) for fetching bird data. The API provides:
 - List of bird species
 - Detailed bird information
 - Bird images
