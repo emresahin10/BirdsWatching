@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.emresahin.birdswatching.core.designsystem-merged_res-39:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/Users/emresahin/.gradle/caches/8.11.1/transforms/2dec4e8a23d9da2edeaf8bd07ee5b173/transformed/core-1.12.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.emresahin.birdswatching.core.designsystem-mergeReleaseResources-37:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/Users/emresahin/.gradle/caches/8.11.1/transforms/2dec4e8a23d9da2edeaf8bd07ee5b173/transformed/core-1.12.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        }
+    ]
+}

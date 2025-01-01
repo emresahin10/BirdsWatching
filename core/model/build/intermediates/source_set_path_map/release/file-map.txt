@@ -1,0 +1,11 @@
+com.emresahin.birdswatching.core.model-core-ktx-1.12.0-0 /Users/emresahin/.gradle/caches/8.11.1/transforms/202b9c87ed16b8fa57c6f145697c1bdc/transformed/core-ktx-1.12.0/res
+com.emresahin.birdswatching.core.model-core-1.12.0-1 /Users/emresahin/.gradle/caches/8.11.1/transforms/2dec4e8a23d9da2edeaf8bd07ee5b173/transformed/core-1.12.0/res
+com.emresahin.birdswatching.core.model-annotation-experimental-1.3.0-2 /Users/emresahin/.gradle/caches/8.11.1/transforms/799ba707e5527826d5f25939413c0b60/transformed/annotation-experimental-1.3.0/res
+com.emresahin.birdswatching.core.model-lifecycle-runtime-2.3.1-3 /Users/emresahin/.gradle/caches/8.11.1/transforms/aa47229441d3d91ef9fabebd2ef3d6df/transformed/lifecycle-runtime-2.3.1/res
+com.emresahin.birdswatching.core.model-pngs-4 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/model/build/generated/res/pngs/release
+com.emresahin.birdswatching.core.model-resValues-5 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/model/build/generated/res/resValues/release
+com.emresahin.birdswatching.core.model-mergeReleaseResources-6 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/model/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.emresahin.birdswatching.core.model-mergeReleaseResources-7 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/model/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.emresahin.birdswatching.core.model-merged_res-8 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/model/build/intermediates/merged_res/release
+com.emresahin.birdswatching.core.model-main-9 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/model/src/main/res
+com.emresahin.birdswatching.core.model-release-10 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/model/src/release/res

@@ -1,0 +1,17 @@
+com.emresahin.birdswatching.core.common-fragment-1.5.1-0 /Users/emresahin/.gradle/caches/8.11.1/transforms/0c08a5321151c1836d2c27b26cb014a7/transformed/fragment-1.5.1/res
+com.emresahin.birdswatching.core.common-activity-1.5.1-1 /Users/emresahin/.gradle/caches/8.11.1/transforms/10c1a540efe1db1511dc822629275551/transformed/activity-1.5.1/res
+com.emresahin.birdswatching.core.common-core-ktx-1.12.0-2 /Users/emresahin/.gradle/caches/8.11.1/transforms/202b9c87ed16b8fa57c6f145697c1bdc/transformed/core-ktx-1.12.0/res
+com.emresahin.birdswatching.core.common-core-1.12.0-3 /Users/emresahin/.gradle/caches/8.11.1/transforms/2dec4e8a23d9da2edeaf8bd07ee5b173/transformed/core-1.12.0/res
+com.emresahin.birdswatching.core.common-annotation-experimental-1.3.1-4 /Users/emresahin/.gradle/caches/8.11.1/transforms/37160359474c9041b1bb631f0bf7a1b8/transformed/annotation-experimental-1.3.1/res
+com.emresahin.birdswatching.core.common-lifecycle-livedata-core-2.5.1-5 /Users/emresahin/.gradle/caches/8.11.1/transforms/b2a27f84ac829750d6a431f7dccfce7c/transformed/lifecycle-livedata-core-2.5.1/res
+com.emresahin.birdswatching.core.common-lifecycle-runtime-2.5.1-6 /Users/emresahin/.gradle/caches/8.11.1/transforms/d0a71e5e0d452b011f4230d68c5dac1a/transformed/lifecycle-runtime-2.5.1/res
+com.emresahin.birdswatching.core.common-savedstate-1.2.0-7 /Users/emresahin/.gradle/caches/8.11.1/transforms/e15f950988cac0cf77bbe8c4e7f1102d/transformed/savedstate-1.2.0/res
+com.emresahin.birdswatching.core.common-lifecycle-viewmodel-2.5.1-8 /Users/emresahin/.gradle/caches/8.11.1/transforms/e330f7d79b00f10d8025ed3f7671cd1d/transformed/lifecycle-viewmodel-2.5.1/res
+com.emresahin.birdswatching.core.common-lifecycle-viewmodel-savedstate-2.5.1-9 /Users/emresahin/.gradle/caches/8.11.1/transforms/fe33a627856bb0ef2cb7153f3badac88/transformed/lifecycle-viewmodel-savedstate-2.5.1/res
+com.emresahin.birdswatching.core.common-pngs-10 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/common/build/generated/res/pngs/release
+com.emresahin.birdswatching.core.common-resValues-11 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/common/build/generated/res/resValues/release
+com.emresahin.birdswatching.core.common-mergeReleaseResources-12 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/common/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.emresahin.birdswatching.core.common-mergeReleaseResources-13 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/common/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.emresahin.birdswatching.core.common-merged_res-14 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/common/build/intermediates/merged_res/release
+com.emresahin.birdswatching.core.common-main-15 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/common/src/main/res
+com.emresahin.birdswatching.core.common-release-16 /Users/emresahin/AndroidStudioProjects/BirdsWatching/core/common/src/release/res
