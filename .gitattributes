@@ -1,0 +1,6 @@
+*.kt linguist-language=Kotlin
+*.kts linguist-language=Kotlin
+*.gradle linguist-language=Kotlin
+*.gradle.kts linguist-language=Kotlin
+README.md linguist-documentation
+*.md linguist-documentation 
