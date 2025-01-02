@@ -1,31 +1,28 @@
 package com.emresahin.birdswatching.feature.home.navigation
 
+import androidx.compose.runtime.remember
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import androidx.navigation.navigation
 import com.emresahin.birdswatching.feature.home.HomeScreen
+import com.emresahin.birdswatching.feature.home.HomeViewModel
 
-const val HOME_ROUTE = "home_graph"
-private const val HOME_SCREEN_ROUTE = "home_screen"
+const val homeNavigationRoute = "home_route"
 
-fun NavController.navigateToHome(userId: String, navOptions: NavOptions? = null) {
-    navigate("$HOME_SCREEN_ROUTE/$userId", navOptions)
+fun NavController.navigateToHome(navOptions: NavOptions? = null) {
+    this.navigate(homeNavigationRoute, navOptions)
 }
 
 fun NavGraphBuilder.homeScreen(
-    onBackClick: () -> Unit
+    onBirdClick: (String) -> Unit
 ) {
-    navigation(
-        route = HOME_ROUTE,
-        startDestination = "$HOME_SCREEN_ROUTE/{userId}"
-    ) {
-        composable(
-            route = "$HOME_SCREEN_ROUTE/{userId}",
-        ) { backStackEntry ->
-            val userId = backStackEntry.arguments?.getString("userId") ?: ""
-            HomeScreen(userId = userId)
-        }
+    composable(route = homeNavigationRoute) {
+        val viewModel = hiltViewModel<HomeViewModel>()
+        HomeScreen(
+            viewModel = viewModel,
+            onBirdClick = onBirdClick
+        )
     }
 } 

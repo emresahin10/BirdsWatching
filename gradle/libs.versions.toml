@@ -7,6 +7,7 @@ kotlin = "2.0.21"
 kotlinGradlePlugin = "1.9.22"
 ksp = "2.0.21-1.0.28"
 secrets = "2.0.1"
+accompanist = "0.32.0"
 
 # Core versions
 androidxCore = "1.15.0"
@@ -35,6 +36,7 @@ coil = "2.7.0"
 kotlinxSerializationJson = "1.7.3"
 kotlinxDateTime = "0.6.1"
 core = "1.15.0"
+material3 = "1.2.1"
 
 [libraries]
 # AndroidX
@@ -49,7 +51,7 @@ androidx-datastore-preferences = { group = "androidx.datastore", name = "datasto
 
 # Compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
-androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
@@ -88,6 +90,12 @@ androidx-test-runner = { group = "androidx.test", name = "runner", version.ref =
 androidx-test-rules = { group = "androidx.test", name = "rules", version.ref = "androidxTestRules" }
 androidx-core = { group = "androidx.core", name = "core", version.ref = "core" }
 
+# Accompanist
+accompanist-swiperefresh = { group = "com.google.accompanist", name = "accompanist-swiperefresh", version.ref = "accompanist" }
+
+# Coroutines
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
@@ -98,4 +106,14 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+[bundles]
+compose = [
+    "androidx-compose-ui",
+    "androidx-compose-ui-graphics",
+    "androidx-compose-ui-tooling-preview",
+    "androidx-compose-material3",
+    "coil-kt-compose",
+    "accompanist-swiperefresh"
+]
 

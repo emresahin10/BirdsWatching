@@ -2,7 +2,6 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.compose)
@@ -45,7 +44,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.8"
+        kotlinCompilerExtensionVersion = libs.versions.androidxComposeCompiler.get()
     }
     packaging {
         resources {
@@ -55,14 +54,11 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:common"))
     implementation(project(":core:designsystem"))
     implementation(project(":core:ui"))
-    implementation(project(":core:model"))
-    implementation(project(":core:data"))
-    implementation(project(":core:auth"))
     implementation(project(":feature:home"))
     implementation(project(":feature:detail"))
-    implementation(project(":feature:auth"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -72,8 +68,8 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.navigation.compose)
 
-    // Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)

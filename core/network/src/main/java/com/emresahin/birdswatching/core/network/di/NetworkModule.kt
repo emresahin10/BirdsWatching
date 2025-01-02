@@ -1,6 +1,7 @@
 package com.emresahin.birdswatching.core.network.di
 
 import com.emresahin.birdswatching.core.network.api.AuthService
+import com.emresahin.birdswatching.core.network.service.BirdService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -19,20 +20,20 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideJson(): Json {
-        return Json {
-            ignoreUnknownKeys = true
-            isLenient = true
-        }
+    fun provideJson(): Json = Json {
+        ignoreUnknownKeys = true
+        coerceInputValues = true
     }
 
     @Provides
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.BODY
-            })
+            .addInterceptor(
+                HttpLoggingInterceptor().apply {
+                    level = HttpLoggingInterceptor.Level.BODY
+                }
+            )
             .build()
     }
 
@@ -42,10 +43,11 @@ object NetworkModule {
         okHttpClient: OkHttpClient,
         json: Json
     ): Retrofit {
+        val contentType = "application/json".toMediaType()
         return Retrofit.Builder()
             .baseUrl("https://bird-watching-api.onrender.com/api/")
             .client(okHttpClient)
-            .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
+            .addConverterFactory(json.asConverterFactory(contentType))
             .build()
     }
 
@@ -53,5 +55,11 @@ object NetworkModule {
     @Singleton
     fun provideAuthService(retrofit: Retrofit): AuthService {
         return retrofit.create(AuthService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideBirdService(retrofit: Retrofit): BirdService {
+        return retrofit.create(BirdService::class.java)
     }
 } 

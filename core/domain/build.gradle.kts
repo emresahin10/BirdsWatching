@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.emresahin.birdswatching.core.data"
+    namespace = "com.emresahin.birdswatching.core.domain"
     compileSdk = 35
 
     defaultConfig {
@@ -27,21 +27,14 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    lint {
-        disable += "FlowOperatorInvokedInComposition"
-    }
 }
 
 dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:common"))
-    implementation(project(":core:network"))
-    implementation(project(":core:domain"))
 
-    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.kotlinx.coroutines.android)
     
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-
-    implementation(libs.kotlinx.coroutines.android)
 } 
