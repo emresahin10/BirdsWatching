@@ -24,16 +24,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun LoginScreen(
     onNavigateToRegister: () -> Unit,
-    onLoginSuccess: () -> Unit,
-    viewModel: AuthViewModel = hiltViewModel()
+    onLoginSuccess: (String) -> Unit,
+    viewModel: AuthViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val snackbarHostState = remember { SnackbarHostState() }
@@ -41,8 +41,9 @@ fun LoginScreen(
     LaunchedEffect(Unit) {
         viewModel.events.collect { event ->
             when (event) {
-                AuthEvent.NavigateToHome -> onLoginSuccess()
+                is AuthEvent.NavigateToHome -> onLoginSuccess(event.userId)
                 is AuthEvent.ShowError -> snackbarHostState.showSnackbar(event.message)
+                is AuthEvent.NavigateToRegister -> onNavigateToRegister()
                 else -> Unit
             }
         }
@@ -57,9 +58,10 @@ fun LoginScreen(
     ) {
         Text(
             text = "Login",
-            style = MaterialTheme.typography.headlineMedium,
-            modifier = Modifier.padding(bottom = 32.dp)
+            style = MaterialTheme.typography.headlineMedium
         )
+
+        Spacer(modifier = Modifier.height(32.dp))
 
         OutlinedTextField(
             value = uiState.email,
@@ -115,10 +117,9 @@ fun LoginScreen(
     }
 }
 
-// create preview for LoginScreen
 @Preview(showBackground = true)
 @Composable
-fun LoginScreenPreview() {
+private fun LoginScreenPreview() {
     LoginScreen(
         onNavigateToRegister = {},
         onLoginSuccess = {}

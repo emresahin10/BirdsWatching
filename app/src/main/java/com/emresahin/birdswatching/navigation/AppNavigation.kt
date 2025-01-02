@@ -2,46 +2,43 @@ package com.emresahin.birdswatching.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.emresahin.birdswatching.feature.auth.LoginScreen
-import com.emresahin.birdswatching.feature.auth.RegisterScreen
+import androidx.navigation.navOptions
+import com.emresahin.birdswatching.feature.auth.navigation.AUTH_GRAPH_ROUTE
+import com.emresahin.birdswatching.feature.auth.navigation.authGraph
+import com.emresahin.birdswatching.feature.home.navigation.HOME_ROUTE
+import com.emresahin.birdswatching.feature.home.navigation.homeScreen
+import com.emresahin.birdswatching.feature.home.navigation.navigateToHome
 
 @Composable
 fun AppNavigation(
+    isAuthenticated: Boolean,
     navController: NavHostController = rememberNavController()
 ) {
     NavHost(
         navController = navController,
-        startDestination = AppDestination.Login.route
+        startDestination = if (isAuthenticated) HOME_ROUTE else AUTH_GRAPH_ROUTE
     ) {
-        composable(AppDestination.Login.route) {
-            LoginScreen(
-                onNavigateToRegister = {
-                    navController.navigate(AppDestination.Register.route)
-                },
-                onLoginSuccess = {
-                    // TODO: Navigate to home screen
-                }
-            )
-        }
+        authGraph(
+            navController = navController,
+            onAuthSuccess = { userId ->
+                navController.navigateToHome(
+                    userId = userId,
+                    navOptions = navOptions {
+                        popUpTo(navController.graph.id) {
+                            inclusive = true
+                        }
+                    }
+                )
+            }
+        )
 
-        composable(AppDestination.Register.route) {
-            RegisterScreen(
-                onNavigateToLogin = {
-                    navController.popBackStack()
-                },
-                onRegisterSuccess = {
-                    // TODO: Navigate to home screen
-                }
-            )
-        }
+        homeScreen(
+            onBackClick = {
+                navController.popBackStack()
+            }
+        )
     }
 }
-
-sealed class AppDestination(val route: String) {
-    data object Login : AppDestination("login")
-    data object Register : AppDestination("register")
-    data object Home : AppDestination("home")
-} 

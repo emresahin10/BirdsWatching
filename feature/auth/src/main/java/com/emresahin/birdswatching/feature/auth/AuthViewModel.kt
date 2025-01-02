@@ -46,7 +46,9 @@ class AuthViewModel @Inject constructor(
             _uiState.value = _uiState.value.copy(isLoading = false)
 
             if (result.isSuccess) {
-                sendEvent(AuthEvent.NavigateToHome)
+                result.user?.id?.let { userId ->
+                    sendEvent(AuthEvent.NavigateToHome(userId.toString()))
+                }
             } else {
                 sendEvent(AuthEvent.ShowError(result.errorMessage ?: "An error occurred"))
             }
@@ -64,7 +66,9 @@ class AuthViewModel @Inject constructor(
             _uiState.value = _uiState.value.copy(isLoading = false)
 
             if (result.isSuccess) {
-                sendEvent(AuthEvent.NavigateToHome)
+                result.user?.id?.let { userId ->
+                    sendEvent(AuthEvent.NavigateToHome(userId.toString()))
+                }
             } else {
                 sendEvent(AuthEvent.ShowError(result.errorMessage ?: "An error occurred"))
             }
@@ -89,6 +93,7 @@ sealed interface AuthEvent : UiEvent {
         data object Register : Action
     }
 
-    data object NavigateToHome : AuthEvent
+    data object NavigateToRegister : AuthEvent
+    data class NavigateToHome(val userId: String) : AuthEvent
     data class ShowError(val message: String) : AuthEvent
 } 

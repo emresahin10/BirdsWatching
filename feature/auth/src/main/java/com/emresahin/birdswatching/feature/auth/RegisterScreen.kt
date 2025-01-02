@@ -32,7 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 @Composable
 fun RegisterScreen(
     onNavigateToLogin: () -> Unit,
-    onRegisterSuccess: () -> Unit,
+    onRegisterSuccess: (String) -> Unit,
     viewModel: AuthViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -41,7 +41,7 @@ fun RegisterScreen(
     LaunchedEffect(Unit) {
         viewModel.events.collect { event ->
             when (event) {
-                AuthEvent.NavigateToHome -> onRegisterSuccess()
+                is AuthEvent.NavigateToHome -> onRegisterSuccess(event.userId)
                 is AuthEvent.ShowError -> snackbarHostState.showSnackbar(event.message)
                 else -> Unit
             }

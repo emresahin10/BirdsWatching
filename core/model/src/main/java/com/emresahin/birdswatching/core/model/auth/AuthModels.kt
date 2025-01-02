@@ -23,7 +23,7 @@ data class RegisterRequest(
 
 @Serializable
 data class LoginResponse(
-    @SerialName("token")
+    @SerialName("accessToken")
     val accessToken: String,
     @SerialName("refreshToken")
     val refreshToken: String,
@@ -53,6 +53,10 @@ data class UserInfo(
     val passwordHash: String,
     @SerialName("name")
     val name: String,
+    @SerialName("refreshToken")
+    val refreshToken: String?,
+    @SerialName("refreshTokenExpiresAt")
+    val refreshTokenExpiresAt: Long?,
     @SerialName("createdAt")
     val createdAt: Long,
     @SerialName("updatedAt")

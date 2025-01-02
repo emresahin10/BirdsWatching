@@ -16,7 +16,7 @@ fun NavController.navigateToAuth(navOptions: NavOptions? = null) {
 
 fun NavGraphBuilder.authGraph(
     navController: NavController,
-    onAuthSuccess: () -> Unit,
+    onAuthSuccess: (String) -> Unit,
     nestedGraphs: NavGraphBuilder.() -> Unit = {}
 ) {
     navigation(
